@@ -26,7 +26,19 @@ Playlist::Playlist(const Playlist& other)
     }
 }
 
-// Copy Assignment Operator
+// Destructor
+Playlist::~Playlist() {
+    std::cout << "Destroying playlist: " << playlist_name << std::endl;
+    // Clean up all nodes and their tracks
+    while (head != nullptr) {
+        PlaylistNode* nextNode = head->next;
+        if (head->track) {
+            delete head->track;  // Delete the AudioTrack
+        }
+        delete head;             // Delete the node
+        head = nextNode;
+    }
+}
 Playlist& Playlist::operator=(const Playlist& other) {
     std::cout << "Copy assignment called for playlist: " << playlist_name << std::endl;
     
@@ -99,20 +111,7 @@ Playlist& Playlist::operator=(Playlist&& other) noexcept {
     return *this;
 }
 
-// TODO: Fix memory leaks!
-// Students must fix this in Phase 1
-// Nir: create copy constructors. Do we need to declare them in h?
-Playlist::~Playlist() {   //destructor
-#ifdef DEBUG
-    std::cout << "Destroying playlist: " << playlist_name << std::endl;
-#endif
-    while (head != nullptr) {
-        PlaylistNode* nextNode = head->next;
-        delete head->track;  // Delete the AudioTrack
-        delete head;         // Delete the node
-        head = nextNode;
-    }
-}
+// Copy Assignment Operator
 
 void Playlist::add_track(AudioTrack* track) {
     if (!track) {
