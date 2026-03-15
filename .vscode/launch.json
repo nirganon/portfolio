@@ -2,6 +2,13 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "DatabaseTest",
+            "request": "launch",
+            "mainClass": "bgu.spl.net.srv.DatabaseTest",
+            "projectName": "server"
+        },
+        {
             "name": "work1: (gdb) Launch",
             "type": "cppdbg",
             "request": "launch",
@@ -75,7 +82,10 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/work_3/client/bin/EchoClient",
-            "args": ["127.0.0.1", "7777"],
+            "args": [
+                "127.0.0.1",
+                "7777"
+            ],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}/work_3/client",
             "environment": [],
