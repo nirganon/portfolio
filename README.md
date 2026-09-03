@@ -5,3 +5,12 @@ Work2 focuses more on parallel programming and multithreading.
 And Work3 takes on client-server relationships, with different types of client configurations.
 Before you dive in, let me share the credit to these work with my talented lab partners, Ofek Hamdi and Tair Elbaz.
 The code here is a product of their labor no less than it is mine's, and they are also currently open for work, so I will be happy to refer you to them if you request kindly.
+
+## Personal project
+
+**[Player Value Compare](https://github.com/nirganon/player-value-compare)** —
+a full-stack app (React/TypeScript, FastAPI, PostgreSQL, Docker) for
+comparing footballers' market-value history side by side, with club-history
+and transfer-fee overlays drawn on the value curve, an age/calendar axis
+toggle, and inflation adjustment. Built solo, end to end — schema, sync
+pipeline, API, and frontend.
